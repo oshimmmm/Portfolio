@@ -80,7 +80,7 @@ export default function Home() {
                   <CardMedia
                     component="img"
                     height="140"
-                    image="/images/bbs2.JPG"
+                    image="/images/bbs2.jpg"
                     alt="oshimmmm"
                     sx={{
                       height: { xs: "150px", sm: "160px", md: "180px" },
