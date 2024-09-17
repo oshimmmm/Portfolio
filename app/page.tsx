@@ -1,101 +1,146 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import utilStyles from "../styles/utils.module.css"
+import { Card, CardActionArea, CardContent, CardMedia, Grid, Paper, Typography } from "@mui/material";
+import { styled } from "@mui/system";
+import { useRef, useEffect } from 'react';
+
+
+const TypographyCustom = styled(Typography)({
+  height: "6em",
+  overflow: "hidden",
+  display: "-webkit-box",
+  WebkitLineClamp: 2,
+  WebkitBoxOrient: "vertical",
+  textOverflow: "ellipsis",
+});
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play(); // 動画の自動再生
+    }
+  }, []);
+
+  return (
+    <>
+      <section className={utilStyles.headingMd}>
+        <p>My name is oshimmmm</p>
+        <p>
+          (This is my portfolio, based on the {' '}
+          <a href="https://nextjs.org/learn">Next.js</a>.)
+        </p>
+      </section>
+
+      <Paper
+        elevation={3}
+        sx={{
+          mt: { xs: 2, sm: 4, md: 8 },
+        }}
+      >
+        <Typography
+          fontWeight="bold"
+          sx={{ textAlign: "center", fontSize: "2rem"}}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          私のスキル
+        </Typography>
+
+        <Grid container spacing={4} my={2}>
+            <Grid item xs={12} sm={6} md={4} mb={4}>
+              <Card sx={{height: { xs: "300px", sm: "320px", md: "350px" }}}>
+                <CardActionArea href={"https://next-js-headless-cms-gray.vercel.app/"} style={{ height: "350px" }}>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image="/images/profile.JPG"
+                    alt="oshimmmm"
+                    sx={{
+                      height: { xs: "150px", sm: "160px", md: "180px" },
+                    }}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div" marginTop={3}>
+                      ホームページ制作
+                    </Typography>
+                    <TypographyCustom variant="body2" color="text.secondary">
+                      Next.jsとheadlessCMSを用いて作成しています。
+                      HTML,CSS,JavaScriptを用いたシンプルなサイト制作もできます。
+                    </TypographyCustom>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={4} mb={4}>
+              <Card sx={{height: { xs: "300px", sm: "320px", md: "350px" }}}>
+                <CardActionArea href={"https://next-js-bbs.vercel.app/"}>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image="/images/bbs2.JPG"
+                    alt="oshimmmm"
+                    sx={{
+                      height: { xs: "150px", sm: "160px", md: "180px" },
+                    }}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div" marginTop={3}>
+                      Webアプリ作成
+                    </Typography>
+                    <TypographyCustom variant="body2" color="text.secondary">
+                      Next.jsとsupabaseを用いた掲示板アプリです。
+                    </TypographyCustom>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={4} mb={4}>
+              <Card sx={{height: { xs: "300px", sm: "320px", md: "350px" }}}>
+                <CardActionArea href={"/videos/video.mp4"}>
+                <CardMedia
+                  component="video"
+                  ref={videoRef}  // video要素を参照
+                  loop
+                  muted
+                  sx={{
+                  height: { xs: "150px", sm: "160px", md: "180px" },  // 高さをsxで指定
+                  }}
+                  src="/videos/video.mp4"  // 動画のパス
+                />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div" marginTop={5}>
+                      Excel VBA
+                    </Typography>
+                    <TypographyCustom variant="body2" color="text.secondary">
+                      勤務表を自動作成するマクロを作りました。
+                    </TypographyCustom>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+        </Grid>
+      </Paper>
+
+
+
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+            <li className={utilStyles.listItem}>
+              <Link href="/" legacyBehavior>
+                <a>a</a>
+              </Link>
+              <br />
+              <small className={utilStyles.lightText}>
+                aaa
+              </small>
+            </li>
+        </ul>
+      </section>
+    </>
   );
-}
+};
