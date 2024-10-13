@@ -1,9 +1,7 @@
 "use client"; //BoxやCardなどのmui material UIを使用している場合は、クライアントサイドレンダリング
 
 import ContentHeader from '@/components/common/ContentHeader';
-import Breadcrumbs from '@/components/common/Breadcrumbs';
-import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Grid2, List, ListItem, ListItemText, Paper, Typography } from '@mui/material';
-import Link from 'next/link';
+import { Box, Card, CardActionArea, CardContent, CardMedia, Paper, Typography } from '@mui/material';
 import React from 'react'
 import { styled } from "@mui/system";
 

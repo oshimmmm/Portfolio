@@ -1,6 +1,5 @@
 "use client"; //ThemeProviderとCssBaselineはクライアントサイドでの動作を保証するため、クライアントサイドレンダリング
 
-import type { Metadata } from "next";
 import "./globals.css";
 import styles from "../components/layout.module.css"
 import Common from "@/components/layout/common";
