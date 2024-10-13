@@ -60,7 +60,7 @@ const webapp = () => {
                   <CardMedia
                     component="img"
                     height="140"
-                    image="/images/pdl1.JPG"
+                    image="/images/pdl1.jpg"
                     alt="oshimmmm"
                     sx={{
                       height: { xs: "160px", sm: "230px", md: "250px" },
@@ -99,7 +99,7 @@ const webapp = () => {
                   <CardMedia
                     component="img"
                     height="140"
-                    image="/images/bbs2.JPG"
+                    image="/images/bbs2.jpg"
                     alt="oshimmmm"
                     sx={{
                       height: { xs: "160px", sm: "230px", md: "250px" },

@@ -60,7 +60,7 @@ const website = () => {
                   <CardMedia
                     component="img"
                     height="140"
-                    image="/images/homepage.JPG"
+                    image="/images/homepage.jpg"
                     alt="oshimmmm"
                     sx={{
                       height: { xs: "160px", sm: "230px", md: "250px" },
@@ -88,7 +88,7 @@ const website = () => {
                   <CardMedia
                     component="img"
                     height="140"
-                    image="/images/homepage2.JPG"
+                    image="/images/homepage2.jpg"
                     alt="oshimmmm"
                     sx={{
                       height: { xs: "160px", sm: "230px", md: "250px" },
