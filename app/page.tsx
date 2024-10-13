@@ -96,7 +96,7 @@ export default function Home() {
                       Webアプリ作成
                     </Typography>
                     <TypographyCustom variant="body2" color="text.secondary">
-                      Next.jsとsupabaseを用いた掲示板アプリです。
+                      Next.jsやsupabaseなどを用いてWebアプリを作成できます。
                     </TypographyCustom>
                   </CardContent>
                 </CardActionArea>
